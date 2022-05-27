@@ -5,7 +5,7 @@ struct cots { // coordinates of the shapes
 };
 
 struct cots search_king(const char chessboard[8][8]) {
-  struct cots k; // k = king
+   struct cots k; // k = king
   for (k.y = 0; k.y < 8; k.y++) 
     for (k.x = 0; k.x < 8; k.x++)
       if (chessboard[k.x][k.y] == 'K')
