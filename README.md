@@ -10,7 +10,7 @@ struct cots search_king(const char chessboard[8][8]) {
   for (int y = 0; y < 8; y++) 
     for (int x = 0; x < 8; x++)
       if (chessboard[x][y] == 'K')
-        return struct cots k {x, y}; // k = king
+        return struct cots k = {x, y}; // k = king
 }
 
 bool check_horizontally(const char chessboard[8][8]) {
