@@ -50,9 +50,9 @@ bool check_vertically(const char chessboard[8][8]) {
 
 bool king_is_in_check (const char chessboard[8][8])
 {
-  bool pidor_1 = check_horizontally(chessboard);
-  bool pidor_2 = check_vertically(chessboard);
-  if (pidor_1 || pidor_2) {
+  bool check_horiz = check_horizontally(chessboard);
+  bool check_vertic = check_vertically(chessboard);
+  if (check_horiz || check_vertic) {
     return true;
   }
   return false;
