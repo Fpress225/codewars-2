@@ -25,6 +25,12 @@ Pos search_bishop(const char chessboard[8][8]) {
         return (Pos) {x, y};
 }
 
+int check_with_a_bishop(const char chessboard[8][8]) {
+  Pos king = search_king(chessboard);
+  Pos bishop = search_bishop(chessboard);
+  for ()
+}
+
 Pos search_knignt(const char chessboard[8][8]) {
   for (int y = 0; y < 8; y++) 
     for (int x = 0; x < 8; x++)
@@ -72,9 +78,34 @@ Pos search_pawn(const char chessboard[8][8]) {
         return (Pos) {x, y};
 }
 
+int check_with_a_pawn(const char chessboard[8][8]) {
+  Pos king = search_king(chessboard);
+  Pos pawn = search_pawn(chessboard);
+  int y = king.y + 1;
+  int x = king.x + 1;
+  if (y == pawn.y && x == pawn.x) 
+    return 1;
+
+  y = king.y - 1;
+  x = king.x + 1;
+  if (y == pawn.y && x == pawn.x)
+    return 1;
+
+  y = king.y - 1;
+  x = king.x - 1;
+  if (y == pawn.y && x == pawn.x)
+    return 1;
+
+  y = king.y + 1;
+  x = king.x - 1;
+  if (y == pawn.y && x == pawn.x)
+    return 1;
+  return 0;
+}
+
 bool check_to_the_king(const char chessboard[8][8]) {
-  int check_with_a_rook = check_with_a_rook(cheddboard);
-  
+  int check_with_a_rook = check_with_a_rook(chessboard);
+  int check_with_a_pawn = check_with_a_pawn(chessboard);
 }
 
 bool king_is_in_check (const char chessboard[8][8]) {
