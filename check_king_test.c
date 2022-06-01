@@ -38,6 +38,44 @@ Pos search_knignt(const char chessboard[8][8]) {
         return (Pos) {x, y};
 }
 
+int check_with_a_knight(const char chessboard[8][8]) {
+  Pos king = search_king(chessboard);
+  Pos knight = search_knight(chessboard);
+  int x = king.x + 2;
+  int y = king.x + 1;
+  if (x == knight.x && y == knight.y)
+    return 1;
+  x = king.x + 2;
+  y = king.y - 1;
+  if (x == knight.x && y == knight.y)
+    return 1;
+  x = king.x - 2;
+  y = king.y - 1;
+  if (x == knight.x && y == knight.y)
+    return 1;
+  x = king.x - 2;
+  y = king.y + 1;
+  if (x == knight.x && y == knight.y)
+    return 1;
+  x = king.x + 1;
+  y = king.y + 2;
+  if (x == knight.x && y == knight.y)
+    return 1;
+  x = king.x + 1;
+  y = king.y - 2;
+  if (x == knight.x && y == knight.y)
+    return 1;
+  x = king.x - 1;
+  y = king.y - 2;
+  if (x == knight.x && y == knight.y)
+    return 1;
+  x = king.x - 1;
+  y = king.y + 2;
+  if (x == knight.x && y == knight.y)
+    return 1;
+  return 0;
+}
+
 Pos search_rook(const char chessboard[8][8]) {
   for (int y = 0; y < 8; y++) 
     for (int x = 0; x < 8; x++)
@@ -104,6 +142,7 @@ int check_with_a_pawn(const char chessboard[8][8]) {
 }
 
 bool check_to_the_king(const char chessboard[8][8]) {
+  int check_with_a_knight = check_with_a_knight(chessboard);
   int check_with_a_rook = check_with_a_rook(chessboard);
   int check_with_a_pawn = check_with_a_pawn(chessboard);
 }
