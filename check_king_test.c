@@ -131,7 +131,8 @@ int check_with_a_pawn(Pos king, const char chessboard[8][8]) {
   return 0;
 }
 
-bool check_to_the_king(const char chessboard[8][8]) {
+
+bool king_is_in_check (const char chessboard[8][8]) {
   Pos king = search_king(chessboard);
   int check_diag = check_diagonaly(king, chessboard);
   int check_hor_and_vert = check_horizantally_and_vertycaly(king, chessboard);
@@ -140,9 +141,4 @@ bool check_to_the_king(const char chessboard[8][8]) {
   if (check_diag == 1 || check_hor_and_vert == 1 || knight_checked == 1 || pawn_checked  ==  1) 
     return true;
   return false;
-}
-
-bool king_is_in_check (const char chessboard[8][8]) {
-  bool check_to_the_king_1 = check_to_the_king(chessboard);
-  return check_to_the_king_1;
 }
