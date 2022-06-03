@@ -18,7 +18,7 @@ Pos search_king(const char chessboard[8][8]) {
 }
 
 int check_diagonaly(Pos king, const char chessboard[8][8]) {
-  for (int y = king.y, x = king.x; y < 8 x < 8; y++, x++) {
+  for (int y = king.y, x = king.x; y < 8 && x < 8; y++, x++) {
     if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) // N = knight, B = bishop, P = pawn
       return 0;
     else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
