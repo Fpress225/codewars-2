@@ -24,19 +24,19 @@ int check_diagonaly(Pos king, const char chessboard[8][8]) {
     else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
       return 1;
   }
-  for (int y = king.y, x = king.x; y < 8 x >= 0; y++, x--) {
+  for (int y = king.y, x = king.x; y < 8 && x >= 0; y++, x--) {
     if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) // N = knight, B = bishop, P = pawn
       return 0;
     else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
       return 1;
   }
-  for (int y = king.y, x = king.x; y >= 0 x >= 0; y--, x--) {
+  for (int y = king.y, x = king.x; y >= 0 &&  x >= 0; y--, x--) {
     if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) // N = knight, B = bishop, P = pawn
       return 0;
     else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
       return 1;
   }
-  for (int y = king.y, x = king.x; y >=0 x < 8; y--, x++) {
+  for (int y = king.y, x = king.x; y >=0 && x < 8; y--, x++) {
     if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) // N = knight, B = bishop, P = pawn
       return 0;
     else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
