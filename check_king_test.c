@@ -20,27 +20,26 @@ Pos search_king(const char chessboard[8][8]) {
 
 int check_diagonaly(Pos king, const char chessboard[8][8]) {
   for (int y = king.y, x = king.x; y < 8 && x < 8; y++, x++) {
-    if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) // N = knight, B = bishop, P = pawn
+    if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) 
       breack;
-    else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
+    else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) 
       return 1;
   }
   for (int y = king.y, x = king.x; y < 8 && x >= 0; y++, x--) {
-    if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) // N = knight, B = bishop, P = pawn
-      breack;
-    else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
+    if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) 
+    else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) 
       return 1;
   }
   for (int y = king.y, x = king.x; y >= 0 &&  x >= 0; y--, x--) {
-    if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) // N = knight, B = bishop, P = pawn
+    if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) 
       breack;
-    else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
+    else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) 
       return 1;
   }
   for (int y = king.y, x = king.x; y >=0 && x < 8; y--, x++) {
-    if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN) // N = knight, B = bishop, P = pawn
+    if (chessboard[y][x] == KNIGHT || chessboard[y][x] == ROOK || chessboard[y][x] == PAWN)
       breack;
-    else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
+    else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN)
       return 1;
   }
   return 0;
@@ -48,27 +47,27 @@ int check_diagonaly(Pos king, const char chessboard[8][8]) {
 
 int check_horizantally_and_vertycaly(Pos king, const char chessboard[8][8]){
   for (int x = king.x; x > -1; x--) {
-    if (chessboard[king.y][x] == KNIGHT || chessboard[king.y][x] == BISHOP || chessboard[king.y][x] == PAWN) // N = knight, B = bishop, P = pawn
+    if (chessboard[king.y][x] == KNIGHT || chessboard[king.y][x] == BISHOP || chessboard[king.y][x] == PAWN) 
       breack;
-    else if (chessboard[king.y][x] == ROOK ||  chessboard[king.y][x] == QUEEN) // R = rook, Q = queenv
+    else if (chessboard[king.y][x] == ROOK ||  chessboard[king.y][x] == QUEEN) 
       return 1;
   }
   for (int x = king.x; x < 8; x++) {
-    if (chessboard[king.y][x] == KNIGHT || chessboard[king.y][x] == BISHOP || chessboard[king.y][x] == PAWN) // N = knight, B = bishop, P = pawn
+    if (chessboard[king.y][x] == KNIGHT || chessboard[king.y][x] == BISHOP || chessboard[king.y][x] == PAWN) 
       breack;
-    else if (chessboard[king.y][x] == ROOK ||  chessboard[king.y][x] == QUEEN) // R = rook, Q = queen
+    else if (chessboard[king.y][x] == ROOK ||  chessboard[king.y][x] == QUEEN) 
       return 1;
   }
   for (int y = king.y; y > -1; y--) {
-    if (chessboard[y][king.x] == KNIGHT || chessboard[y][king.x] == BISHOP || chessboard[y][king.x] == PAWN) // N = knight, B = bishop, P = pawn
+    if (chessboard[y][king.x] == KNIGHT || chessboard[y][king.x] == BISHOP || chessboard[y][king.x] == PAWN) 
       breack;
-    else if (chessboard[y][king.x] == ROOK ||  chessboard[y][king.x] == QUEEN) // R = rook, Q = queen
+    else if (chessboard[y][king.x] == ROOK ||  chessboard[y][king.x] == QUEEN)
       return 1;
   }
   for (int y = king.y; y < 8; y++) {
-    if (chessboard[y][king.x] == KNIGHT || chessboard[y][king.x] == BISHOP || chessboard[y][king.x] == PAWN) // N = knight, B = bishop, P = pawn
+    if (chessboard[y][king.x] == KNIGHT || chessboard[y][king.x] == BISHOP || chessboard[y][king.x] == PAWN) 
       breack;
-    else if (chessboard[y][king.x] == ROOK ||  chessboard[y][king.x] == QUEEN) // R = rook, Q = queen
+    else if (chessboard[y][king.x] == ROOK ||  chessboard[y][king.x] == QUEEN) 
       return 1;
   }
   return 0;
