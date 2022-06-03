@@ -15,6 +15,7 @@ Pos search_king(const char chessboard[8][8]) {
     for (int x = 0; x < 8; x++)
       if (chessboard[y][x] == 'K')
         return (Pos) {x, y};
+  return (Pos) {.x = 0, .y = 0};
 }
 
 int check_diagonaly(Pos king, const char chessboard[8][8]) {
@@ -42,7 +43,7 @@ int check_diagonaly(Pos king, const char chessboard[8][8]) {
     else if (chessboard[y][x] == BISHOP ||  chessboard[y][x] == QUEEN) // R = rook, Q = queenv
       return 1;
   }
-
+  return 0;
 }
 
 int check_horizantally_and_vertycaly(Pos king, const char chessboard[8][8]){
@@ -70,6 +71,7 @@ int check_horizantally_and_vertycaly(Pos king, const char chessboard[8][8]){
     else if (chessboard[y][king.x] == ROOK ||  chessboard[y][king.x] == QUEEN) // R = rook, Q = queen
       return 1;
   }
+  return 0;
 }
 
 int check_with_a_knight(Pos king, const char chessboard[8][8]) {
