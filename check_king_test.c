@@ -115,8 +115,8 @@ int is_pawn_on_pos(int possible_pawn_pos_y,int possible_pawn_pos_x,const char ch
 }
 
 int check_with_a_pawn(Pos king, const char chessboard[8][8]) {
-  return is_pawn_on_pos(possible_pawn_pos_y = king.y + 1, possible_pawn_pos_x = king.x + 1, chessboard = chessboard) || is_pawn_on_pos(possible_pawn_pos_y = king.y + 1, possible_pawn_pos_x = king.x - 1, chessboard = chessboard) ||
-  is_pawn_on_pos(possible_pawn_pos_y = king.y - 1, possible_pawn_pos_x = king.x - 1, chessboard = chessboard) || is_pawn_on_pos(possible_pawn_pos_y = king.y - 1, possible_pawn_pos_x = king.x + 1, chessboard = chessboard);
+  return is_pawn_on_pos(king.y + 1, king.x + 1, chessboard) || is_pawn_on_pos(king.y + 1, king.x - 1, chessboard) ||
+  is_pawn_on_pos(king.y - 1, king.x - 1, chessboard) || is_pawn_on_pos(king.y - 1, king.x + 1, chessboard);
 }
 
 
