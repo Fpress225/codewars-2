@@ -47,7 +47,7 @@ int check_diagonaly(Pos king, const char chessboard[8][8]) {
 }
 
 int check_horizantally_and_vertycaly(Pos king, const char chessboard[8][8]){
-  for (int x = king.x; x > -1; x--) {
+  for (int x = king.x; x >= 0; x--) {
     if (chessboard[king.y][x] == KNIGHT || chessboard[king.y][x] == BISHOP || chessboard[king.y][x] == PAWN) 
       break;
     else if (chessboard[king.y][x] == ROOK ||  chessboard[king.y][x] == QUEEN) 
@@ -59,7 +59,7 @@ int check_horizantally_and_vertycaly(Pos king, const char chessboard[8][8]){
     else if (chessboard[king.y][x] == ROOK ||  chessboard[king.y][x] == QUEEN) 
       return 1;
   }
-  for (int y = king.y; y > -1; y--) {
+  for (int y = king.y; y >= 0; y--) {
     if (chessboard[y][king.x] == KNIGHT || chessboard[y][king.x] == BISHOP || chessboard[y][king.x] == PAWN) 
       break;
     else if (chessboard[y][king.x] == ROOK ||  chessboard[y][king.x] == QUEEN)
@@ -110,13 +110,13 @@ int check_with_a_knight(Pos king, const char chessboard[8][8]) {
   return 0;
 }
 
-int is_pawn_on_pos(Pos possible_pawn_pos, chessboard[8][8]) {
-  return chessboard[possible_pawn_pos.y][possible_pawn_pos.x] == PAWN;
+int is_pawn_on_pos(int possible_pawn_pos_y,int possible_pawn_pos_x,const char chessboard[8][8]) {
+  return chessboard[possible_pawn_pos_y][possible_pawn_pos_x] == PAWN;
 }
 
 int check_with_a_pawn(Pos king, const char chessboard[8][8]) {
-  return is_pawn_on_pos(possible_pawn_pos.y = king.y + 1, possible_pawn_pos.x = king.x + 1, chessboard = chessboard) || is_pawn_on_pos(possible_pawn_pos.y = king.y + 1, possible_pawn_pos.x = king.x - 1, chessboard = chessboard) ||
-  is_pawn_on_pos(possible_pawn_pos.y = king.y - 1, possible_pawn_pos.x = king.x - 1, chessboard = chessboard) || is_pawn_on_pos(possible_pawn_pos.y = king.y - 1, possible_pawn_pos.x = king.x + 1, chessboard = chessboard);
+  return is_pawn_on_pos(possible_pawn_pos_y = king.y + 1, possible_pawn_pos_x = king.x + 1, chessboard = chessboard) || is_pawn_on_pos(possible_pawn_pos_y = king.y + 1, possible_pawn_pos_x = king.x - 1, chessboard = chessboard) ||
+  is_pawn_on_pos(possible_pawn_pos_y = king.y - 1, possible_pawn_pos_x = king.x - 1, chessboard = chessboard) || is_pawn_on_pos(possible_pawn_pos_y = king.y - 1, possible_pawn_pos_x = king.x + 1, chessboard = chessboard);
 }
 
 
