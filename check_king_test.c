@@ -74,44 +74,23 @@ int check_horizantally_and_vertycaly(Pos king, const char chessboard[8][8]){
   return 0;
 }
 
-int check_with_a_knight(Pos king, const char chessboard[8][8]) {
-  int x = king.x + 2;
-  int y = king.x + 1;
-  if (chessboard[y][x] == KNIGHT)
-    return 1;
-  x = king.x + 2;
-  y = king.y - 1;
-  if (chessboard[y][x] == KNIGHT)
-    return 1;
-  x = king.x - 2;
-  y = king.y - 1;
-  if (chessboard[y][x] == KNIGHT)
-    return 1;
-  x = king.x - 2;
-  y = king.y + 1;
-  if (chessboard[y][x] == KNIGHT)
-    return 1;
-  x = king.x + 1;
-  y = king.y + 2;
-  if (chessboard[y][x] == KNIGHT)
-    return 1;
-  x = king.x + 1;
-  y = king.y - 2;
-  if (chessboard[y][x] == KNIGHT)
-    return 1;
-  x = king.x - 1;
-  y = king.y - 2;
-  if (chessboard[y][x] == KNIGHT)
-    return 1;
-  x = king.x - 1;
-  y = king.y + 2;
-  if (chessboard[y][x] == KNIGHT)
-    return 1;
-  return 0;
+int is_knight_on_pos(int khight_y, int khight_x, const char chessboard[8][8]) {
+  return chessboard[khight_y][khight_x] == KNIGHT;
 }
 
-int is_pawn_on_pos(int possible_pawn_pos_y,int possible_pawn_pos_x,const char chessboard[8][8]) {
-  return chessboard[possible_pawn_pos_y][possible_pawn_pos_x] == PAWN;
+int check_with_a_knight(Pos king, const char chessboard[8][8]) {
+  return is_knight_on_pos(king.y + 1, king.x + 2, chessboard)
+      || is_knight_on_pos(king.y + 1, king.x - 2, chessboard)
+      || is_knight_on_pos(king.y - 1, king.x - 2, chessboard)
+      || is_knight_on_pos(king.y - 1, king.x + 2, chessboard)
+      || is_knight_on_pos(king.y + 2, king.x + 1, chessboard)
+      || is_knight_on_pos(king.y + 2, king.x - 1, chessboard)
+      || is_knight_on_pos(king.y - 2, king.x - 1, chessboard)
+      || is_knight_on_pos(king.y + 2, king.x + 1, chessboard);
+}
+
+int is_pawn_on_pos(int pawn_y, int pawn_x, const char chessboard[8][8]) {
+  return chessboard[pawn_y][pawn_x] == PAWN;
 }
 
 int check_with_a_pawn(Pos king, const char chessboard[8][8]) {
