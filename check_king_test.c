@@ -86,7 +86,7 @@ int check_with_a_knight(Pos king, const char chessboard[8][8]) {
       || is_knight_on_pos(king.y + 2, king.x + 1, chessboard)
       || is_knight_on_pos(king.y + 2, king.x - 1, chessboard)
       || is_knight_on_pos(king.y - 2, king.x - 1, chessboard)
-      || is_knight_on_pos(king.y + 2, king.x + 1, chessboard);
+      || is_knight_on_pos(king.y - 2, king.x + 1, chessboard);
 }
 
 int is_pawn_on_pos(int pawn_y, int pawn_x, const char chessboard[8][8]) {
