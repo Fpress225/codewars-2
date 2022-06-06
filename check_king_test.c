@@ -94,9 +94,7 @@ int is_pawn_on_pos(int pawn_y, int pawn_x, const char chessboard[8][8]) {
 }
 
 int check_with_a_pawn(Pos king, const char chessboard[8][8]) {
-  return is_pawn_on_pos(king.y + 1, king.x + 1, chessboard) 
-      || is_pawn_on_pos(king.y + 1, king.x - 1, chessboard) 
-      || is_pawn_on_pos(king.y - 1, king.x - 1, chessboard) 
+  return is_pawn_on_pos(king.y - 1, king.x - 1, chessboard) 
       || is_pawn_on_pos(king.y - 1, king.x + 1, chessboard);
 }
 
