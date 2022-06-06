@@ -121,6 +121,6 @@ int check_with_a_pawn(Pos king, const char chessboard[8][8]) {
 
 
 bool king_is_in_check (const char chessboard[8][8]) {
-  Pos king = search_king(chessboard)
+  Pos king = search_king(chessboard);
   return check_diagonaly(king, chessboard) || check_horizantally_and_vertycaly(king, chessboard) || check_with_a_knight(king, chessboard) || check_with_a_pawn(king, chessboard);
 }
