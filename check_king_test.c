@@ -115,12 +115,17 @@ int is_pawn_on_pos(int possible_pawn_pos_y,int possible_pawn_pos_x,const char ch
 }
 
 int check_with_a_pawn(Pos king, const char chessboard[8][8]) {
-  return is_pawn_on_pos(king.y + 1, king.x + 1, chessboard) || is_pawn_on_pos(king.y + 1, king.x - 1, chessboard) ||
-  is_pawn_on_pos(king.y - 1, king.x - 1, chessboard) || is_pawn_on_pos(king.y - 1, king.x + 1, chessboard);
+  return is_pawn_on_pos(king.y + 1, king.x + 1, chessboard) 
+      || is_pawn_on_pos(king.y + 1, king.x - 1, chessboard) 
+      || is_pawn_on_pos(king.y - 1, king.x - 1, chessboard) 
+      || is_pawn_on_pos(king.y - 1, king.x + 1, chessboard);
 }
 
 
 bool king_is_in_check (const char chessboard[8][8]) {
   Pos king = search_king(chessboard);
-  return check_diagonaly(king, chessboard) || check_horizantally_and_vertycaly(king, chessboard) || check_with_a_knight(king, chessboard) || check_with_a_pawn(king, chessboard);
+  return check_diagonaly(king, chessboard) 
+      || check_horizantally_and_vertycaly(king, chessboard) 
+      || check_with_a_knight(king, chessboard) 
+      || check_with_a_pawn(king, chessboard);
 }
