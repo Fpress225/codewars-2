@@ -74,8 +74,8 @@ int check_horizantally_and_vertycaly(Pos king, const char chessboard[8][8]){
   return 0;
 }
 
-int is_knight_on_pos(int khight_y, int khight_x, const char chessboard[8][8]) {
-  return chessboard[khight_y][khight_x] == KNIGHT;
+int is_knight_on_pos(int knight_y, int knight_x, const char chessboard[8][8]) {
+  return chessboard[knight_y][knight_x] == KNIGHT;
 }
 
 int check_with_a_knight(Pos king, const char chessboard[8][8]) {
