@@ -10,7 +10,7 @@ int arr_min(int array_n[], int n) {
     return min_index;
   }
 
-  int index_in_the_maximum_element_in_the_array(int array_n[], int n) {
+int arr_max(int array_n[], int n) {
     int maximum_time_for_the_customer = array_n[0];
     for (int i = 0; i < n; i++) {
       if (maximum_time_for_the_customer < array_n[i]) {
@@ -47,7 +47,7 @@ int queue_time(const int *customers, int customers_length, int n) {
         int index_in_the_array = arr_min(array_n, n);
         array_n[index_in_the_array] += customers[i];
       }
-      return index_in_the_maximum_element_in_the_array(array_n, n);
+      return arr_max(array_n, n);
     }
   }
   return 0;
