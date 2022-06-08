@@ -1,13 +1,13 @@
-int index_in_the_minimum_element_in_the_array(int array_n[], int n) {
-    int p = 0;
+int arr_min(int array_n[], int n) {
+    int min_index = 0;
     int mimimum_time_for_the_customer = array_n[0];
     for (int i = 0; i < n; i++) {
       if (mimimum_time_for_the_customer > array_n[i]) {
         mimimum_time_for_the_customer = array_n[i];
-        p = i;
+        min_index = i;
       }
     }
-    return p;
+    return min_index;
   }
 
   int index_in_the_maximum_element_in_the_array(int array_n[], int n) {
