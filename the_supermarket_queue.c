@@ -44,8 +44,8 @@ int queue_time(const int *customers, int customers_length, int n) {
         array_n[i] = customers[i];
       }
       for (int i = n; i < customers_length; i++) {
-        int index_in_the_array = *index_in_the_minimum_element_in_the_array(array_n, n);
-        array_n[index_in_the_array] = customers[i];
+        int index_in_the_array = index_in_the_minimum_element_in_the_array(array_n, n);
+        array_n[index_in_the_array] += customers[i];
       }
       return index_in_the_maximum_element_in_the_array(array_n, n);
     }
