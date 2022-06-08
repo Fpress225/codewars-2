@@ -1,10 +1,10 @@
-int *index_in_the_minimum_element_in_the_array(int array_n[], int n) {
-    int *p = 0;
+int index_in_the_minimum_element_in_the_array(int array_n[], int n) {
+    int p = 0;
     int mimimum_time_for_the_customer = array_n[0];
     for (int i = 0; i < n; i++) {
       if (mimimum_time_for_the_customer > array_n[i]) {
         mimimum_time_for_the_customer = array_n[i];
-        *p = i;
+        p = i;
       }
     }
     return p;
