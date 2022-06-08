@@ -39,7 +39,7 @@ int queue_time(const int *customers, int customers_length, int n) {
       } 
       return customers_time; 
     } else {
-      int array_n[n - 1];
+      int array_n[n];
       for (int i = 0; i < n; i++) {
         array_n[i] = customers[i];
       }
